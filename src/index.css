@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import "tailwindcss";
+
+@theme{
+    --font-mono: "Space Mono", monospace;
+    --font-archivo: "Archivo", sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.5;
+    --color-text: #333333;
+    --color-background:#F7F4EA;
+    --color-primary:#A8BBA3;
+    --color-secondary:#EBD9D1;
+    --color-accent:#B87C4C;
+    --color-border:#F7F4DE
+
+}
