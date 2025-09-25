@@ -10,7 +10,7 @@ function Navbar({showMenu, onToggleMenu}) {
 
     /* const [open, setOpen] = useState(false); */
     return (
-        <nav className='w-full bg-[#A8BBA3] flex items-center justify-between px-4 py-2 hide-scrollbar'>
+        <nav className='w-full bg-[#A8BBA3] flex items-center justify-between px-4 py-2 hide-scrollbar '>
             {/* left section */}
             <div className='flex items-center gap-2 p-0'>
                 {/* logo */}

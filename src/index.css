@@ -25,3 +25,50 @@
   scrollbar-width: none;       
 }
 
+.category-bar {
+  position: relative;
+  background: #e2e8f0; 
+}
+
+.category-bar ul {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;        
+  padding: 1rem 0;
+  position: relative;
+}
+
+
+.category-bar ul::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  width: var(--underline-width, 0);
+  left: var(--underline-left, 0);
+  background: #ec4899;          
+  border-radius: 2px;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+.category-bar li {
+  position: relative;
+  cursor: pointer;
+  padding: 0 .25rem;
+}
+
+.category-bar li:hover {
+  --underline-width: 100%;
+  --underline-left: 0;
+}
+
+
+.category-bar li:hover::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;     
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent; 
+}

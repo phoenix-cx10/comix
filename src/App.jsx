@@ -6,9 +6,22 @@ import CategoryMenu from './components/categoryMenu';
 import Home from "./pages/Home";
 import '../src/index.css'
 
+
 function App() {
 
   const [showMenu, setShowMenu] = useState(false);
+   const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
+
+  const handleAddToCart = (product) => {
+    setCart(prevCart => [...prevCart, product]);
+    console.log("Added to cart:", product.name);
+  };
+
+  const handleAddToWishlist = (product) => {
+    setWishlist(prevWishlist => [...prevWishlist, product]);
+    console.log("Added to wishlist:", product.name);
+  };
 
   return (
     <BrowserRouter>
@@ -20,7 +33,8 @@ function App() {
       {showMenu && <CategoryMenu/>}
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home  onAddToCart={handleAddToCart} onAddToWishlist={handleAddToWishlist}/>} />
+        
       </Routes>
 
       {/* Footer */}
