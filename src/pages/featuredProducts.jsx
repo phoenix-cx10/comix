@@ -1,13 +1,15 @@
 import React from "react";
 import products from "../products.json";
 import ProductCard from "../components/productCard";
+import Products from "./products"; 
+import { Link } from "react-router-dom";
 
 function FeaturedProducts({ onAddToCart, onAddToWishlist }) {
     
     const featured = products.filter((p) => p.featured)
 
     return (
-       <div className="min-h-screen bg-gradient-to-b from-[#FFFFFF] to-[#FFF1EA] py-8">
+       <div className="min-h-screen bg-gradient-to-b from-[#FFFFFF] to-[#ebb9a0] py-8">
          <section className="container mx-auto px-4">
            <h2 className="text-3xl font-bold text-center text-black font-archivo mb-2">Featured Products</h2>
            <p className="text-gray-900 font-mono text-center mb-8">Discover our most popular books</p>
@@ -27,8 +29,16 @@ function FeaturedProducts({ onAddToCart, onAddToWishlist }) {
                  />
                ))}
              </div>
-           )}
-         </section>
+          )}
+          <div>
+          <Link 
+            to="/products" 
+              className="block text-center bg-[#B95723] text-white px-6 py-3 mt-7 rounded-lg hover:bg-[#A04A1F] transition-colors mx-auto w-fit">
+               View All Products →
+          </Link>
+        </div>
+        </section>
+        
        </div>
     )
 }

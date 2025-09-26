@@ -10,7 +10,7 @@
     "featured": true,
     "isHotSale": true,
     "isBestSeller": true,
-    "image": "/images/dune.jpg"
+    "image": "./assets/books/dune.jpeg"
   },
   {
     "id": 2,

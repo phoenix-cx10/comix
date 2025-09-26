@@ -2,47 +2,64 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ProductCard({ product, onAddToWishlist, onAddToCart }) {
+  const handleCartClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onAddToCart(product);
+  };
+
+  const handleWishlistClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onAddToWishlist(product);
+  };
+
   return (
-    <Link 
-      to={`/product/${product.id}`}
-      className="block bg-[#69807A] rounded-2xl p-4 w-full max-w-xs border border-[#C9D5D3] hover:drop-shadow-lg ease-in-out hover:backdrop-blur-3xl hover:scale-105 transition-shadow duration-300 cursor-pointer"
-    >
+    <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-[#C9D5D3] p-4 group">
       {/* Labels */}
       <div className="flex gap-2 mb-3">
         {product.isHotSale && (
-          <span className="bg-[#fc1a1a] text-white px-3 py-1 text-xs rounded-full font-medium">
+          <span className="bg-[#B95723] text-white px-3 py-1 text-xs rounded-full font-medium">
             Hot Sale
           </span>
         )}
         {product.isBestSeller && (
-          <span className="bg-[#fded11] text-black px-3 py-1 text-xs rounded-full font-medium">
+          <span className="bg-[#42625F] text-white px-3 py-1 text-xs rounded-full font-medium">
             Best Seller
           </span>
         )}
       </div>
 
-      {/* Image */}
-      <div className="bg-white h-48 w-full rounded-xl mb-4 flex items-center justify-center p-2 border border-[#EBD9D1]">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="h-full object-cover rounded-lg"
-        />
-      </div>
+      {/* Image - Clickable for product page */}
+      <Link to={`/product/${product.id}`} className="block">
+        <div className="bg-gray-50 h-48 w-full rounded-lg mb-4 flex items-center justify-center p-2 border border-[#EBD9D1] group-hover:scale-105 transition-transform duration-300">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="h-full object-cover rounded-md"
+          />
+        </div>
+      </Link>
 
-      {/* Product Info */}
-      <div className="mb-4">
-        <h3 className="font-semibold text-black text-lg mb-1 line-clamp-1">{product.name}</h3>
-        <p className="text-[#0a0a0a] text-sm mb-2">by {product.owner}</p>
-        <p className="text-[#0e0e0e] text-xs line-clamp-2 leading-relaxed">{product.description}</p>
-      </div>
+      {/* Product Info - Clickable for product page */}
+      <Link to={`/product/${product.id}`} className="block">
+        <div className="mb-4">
+          <h3 className="font-semibold text-gray-800 text-lg mb-1 line-clamp-1 group-hover:text-[#B95723] transition-colors">
+            {product.name}
+          </h3>
+          <p className="text-gray-600 text-sm mb-2">by {product.owner}</p>
+          <p className="text-gray-500 text-xs line-clamp-2 leading-relaxed">
+            {product.description}
+          </p>
+        </div>
+      </Link>
 
       {/* Price + Rating + Actions */}
       <div className="flex items-center justify-between">
         <div>
-          <p className="font-bold text-[#ffffff] text-lg">${product.price}</p>
+          <p className="font-bold text-[#B95723] text-lg">${product.price}</p>
           <div className="flex items-center mt-1">
-            <span className="text-xs text-[#fff] mr-1">({product.rating})</span>
+            <span className="text-xs text-gray-600 mr-1">({product.rating})</span>
             {Array.from({ length: 5 }).map((_, i) => (
               <span key={i} className="text-sm">
                 {i < product.rating ? "⭐" : "☆"}
@@ -54,12 +71,8 @@ function ProductCard({ product, onAddToWishlist, onAddToCart }) {
         {/* Action Icons */}
         <div className="flex gap-2">
           <button
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              onAddToCart(product);
-            }}
-            className="bg-[#B95723] hover:bg-[#ebbba1] text-white hover:text-[#B95723] p-2 rounded-full transition-colors duration-200"
+            onClick={handleCartClick}
+            className="bg-[#A8BBA3] hover:bg-[#95AA90] text-white p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-md"
             title="Add to Cart"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,12 +81,8 @@ function ProductCard({ product, onAddToWishlist, onAddToCart }) {
           </button>
           
           <button
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              onAddToWishlist(product);
-            }}
-            className="bg-[#ffc6ad] hover:bg-[#ff8080] text-[#ff1e00] p-2 rounded-full transition-colors duration-200"
+            onClick={handleWishlistClick}
+            className="bg-[#EBD9D1] hover:bg-[#DBC9C1] text-[#B95723] p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-md"
             title="Add to Wishlist"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,7 +91,7 @@ function ProductCard({ product, onAddToWishlist, onAddToCart }) {
           </button>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 

@@ -1,5 +1,7 @@
 import React from "react";
 import FeaturedProducts from "./FeaturedProducts";
+import Products from "./products";
+import Contact from "../components/contact";
 
 function Home({ onAddToCart, onAddToWishlist }) {
 
@@ -35,7 +37,15 @@ function Home({ onAddToCart, onAddToWishlist }) {
           onAddToCart={onAddToCart}
           onAddToWishlist={onAddToWishlist}
         />
+
+        {/* <Products 
+        onAddToCart={onAddToCart}
+        onAddToWishlist={onAddToWishlist}
+      /> */}
+        
+      <Contact/>
       </div>
+      
       </div>
   );
 }
