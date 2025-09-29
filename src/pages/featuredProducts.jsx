@@ -33,11 +33,12 @@ function FeaturedProducts({ onAddToCart, onAddToWishlist }) {
           <div>
           <Link 
             to="/products" 
-              className="block text-center bg-[#B95723] text-white px-6 py-3 mt-7 rounded-lg hover:bg-[#A04A1F] transition-colors mx-auto w-fit">
+              className="block text-center bg-[#B95723] text-white font-archivo px-6 py-2 mt-7 rounded-lg hover:bg-[#A04A1F] transition-colors mx-auto w-fit">
                View All Products →
           </Link>
         </div>
         </section>
+        
         
        </div>
     )

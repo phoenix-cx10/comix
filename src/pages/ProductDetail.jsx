@@ -20,14 +20,14 @@ function ProductDetail({ onAddToCart, onAddToWishlist }) {
     );
   }
 
-  // Find related products (same genre)
+  // related products
   const relatedProducts = products
     .filter(p => p.id !== product.id && p.genre === product.genre)
     .slice(0, 4);
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Breadcrumb */}
+      {/* nav back */}
       <div className="container mx-auto px-6 py-4">
         <Link to="/products" className="inline-flex items-center text-[#B95723] hover:text-[#A04A1F] transition-colors">
           <ArrowLeft size={16} className="mr-2" />
@@ -35,20 +35,20 @@ function ProductDetail({ onAddToCart, onAddToWishlist }) {
         </Link>
       </div>
 
-      {/* Product Main Section */}
+      {/* Products */}
       <section className="container mx-auto px-6 py-8">
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Product Image */}
+          {/* image */}
           <div className="flex flex-col items-center">
             <div className="bg-gray-50 rounded-2xl p-8 border border-[#EBD9D1]">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-80 h-96 object-cover rounded-lg shadow-lg"
+                className="w-80 h-96 object-fill rounded-lg shadow-lg hover:scale-110 transition-transform duration-500 bg-black/0 hover:bg-black/50"
               />
             </div>
             
-            {/* Badges */}
+            {/* hot sale & best seller*/}
             <div className="flex gap-3 mt-6">
               {product.isHotSale && (
                 <span className="bg-[#B95723] text-white px-4 py-2 rounded-full text-sm font-medium">
@@ -63,13 +63,13 @@ function ProductDetail({ onAddToCart, onAddToWishlist }) {
             </div>
           </div>
 
-          {/* Product Info */}
+          {/* Product details */}
           <div className="space-y-6">
             <div>
               <h1 className="text-4xl font-bold text-gray-800 mb-2">{product.name}</h1>
               <p className="text-xl text-gray-600 mb-4">by {product.owner}</p>
               
-              {/* Rating */}
+              {/* Ratings */}
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -84,7 +84,7 @@ function ProductDetail({ onAddToCart, onAddToWishlist }) {
               </div>
 
               {/* Price */}
-              <p className="text-3xl font-bold text-[#B95723] mb-2">${product.price}</p>
+              <p className="text-3xl font-bold text-[#B95723] mb-2">Rs.{product.price}</p>
               
               {/* Genre */}
               <span className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
@@ -114,7 +114,7 @@ function ProductDetail({ onAddToCart, onAddToWishlist }) {
               </div>
             </div>
 
-            {/* Action Buttons */}
+            {/* wishlist & cart buttons */}
             <div className="flex gap-4 pt-4">
               <button
                 onClick={() => onAddToCart(product)}
@@ -132,7 +132,7 @@ function ProductDetail({ onAddToCart, onAddToWishlist }) {
           </div>
         </div>
 
-        {/* Related Products */}
+        {/* Related */}
         {relatedProducts.length > 0 && (
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-gray-800 mb-6">Related Books</h3>
@@ -142,11 +142,12 @@ function ProductDetail({ onAddToCart, onAddToWishlist }) {
                   <img 
                     src={relatedProduct.image} 
                     alt={relatedProduct.name}
-                    className="w-full h-40 object-cover rounded-md mb-3"
+                    className="w-full h-40 rounded-md mb-3 object-fill
+                    "
                   />
                   <h4 className="font-semibold text-gray-800 line-clamp-1">{relatedProduct.name}</h4>
                   <p className="text-sm text-gray-600">by {relatedProduct.owner}</p>
-                  <p className="text-[#B95723] font-bold">${relatedProduct.price}</p>
+                  <p className="text-[#B95723] font-bold">Rs.{relatedProduct.price}</p>
                   <Link 
                     to={`/product/${relatedProduct.id}`}
                     className="text-sm text-[#42625F] hover:underline mt-2 inline-block"

@@ -3,7 +3,7 @@ import ContactForm from '../components/ContactForm';
 
 function Contact() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className=" bg-white">
       <ContactForm />
     </div>
   );

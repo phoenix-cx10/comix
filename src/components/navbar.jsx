@@ -3,32 +3,32 @@ import CategoryMenu from './categoryMenu';
 import { Link } from 'react-router-dom';
 import { Search, Heart, User, ShoppingCart, ChevronDown } from "lucide-react";
 
-function Navbar({ showMenu, onToggleMenu, cartCount, wishlistCount }) {
-    const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+function Navbar({ showMenu, cartCount, wishlistCount }) {
+   /*  const [isSearchExpanded, setIsSearchExpanded] = useState(false); */
 
     return (
-        <nav className='w-full bg-[#A8BBA3] flex items-center justify-between px-6 py-3'>
+        <nav className='w-full bg-[#6a8d8a] flex items-center justify-between px-6 py-3 '>
             {/* Left section */}
-            <div className='flex items-center gap-6'>
+            <div className='flex items-center gap-16'>
                 {/* Logo */}
-                <Link to={'/'} className='flex items-center gap-2'>
+                <Link to={'/'} className='flex items-center gap-2 hover:scale-105'>
                     <img src='/assets/nav-logo.png' className='w-10 h-10 object-contain' alt='Logo' />
                     <span className='font-mono font-bold text-2xl'>Comix</span>
                 </Link>
                 
-                {/* Shop Button */}
+                {/* Shop */}
                 <div className='relative'>
                     <Link to="/products">
-                        <button className='text-lg text-black flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#95AA90] transition-colors duration-200'>
+                        <button className='text-lg text-black hover:text-orange-600 font-archivo flex items-center gap-2 mt-1.5 rounded-lg'>
                             Shop
-                            <ChevronDown size={18} className={`transition-transform duration-200 ${showMenu ? "rotate-180" : "rotate-0"}`} />
+                            {/* <ChevronDown size={18} className={`transition-transform duration-200 ${showMenu ? "rotate-180" : "rotate-0"}`} /> */}
                         </button>
                     </Link>
                 </div>
             </div>
 
-            {/* Search Section */}
-            <div className={`flex items-center transition-all duration-300 ${isSearchExpanded ? 'w-80' : 'w-auto'}`}>
+            {/* seacrh option , doesnt need actually */}
+           {/*  <div className={`flex items-center transition-all duration-300 ${isSearchExpanded ? 'w-80' : 'w-auto'}`}>
                 {isSearchExpanded ? (
                     <div className='relative w-full'>
                         <input
@@ -48,18 +48,18 @@ function Navbar({ showMenu, onToggleMenu, cartCount, wishlistCount }) {
                         title="Search"
                     />
                 )}
-            </div>
+            </div> */}
 
-            {/* Right Icons */}
+            {/* Rightside icons */}
             <div className='flex items-center gap-6'>
 
 
-                <Link to="/contact" className='text-black hover:text-gray-800 transition-colors p-2'>
-                    <User size={24} title="Account" />
+                <Link to="/contact" className='text-black hover:text-orange-600 transition-colors px-2 hover:scale-120'>
+                    <User size={22} title="Account" />
                 </Link>
                 
-                <Link to="/wishlist" className='relative text-black hover:text-gray-800 transition-colors p-2'>
-                    <Heart size={24} title="Wishlist" />
+                <Link to="/wishlist" className='relative text-black hover:text-orange-600 transition-colors px-2 hover:scale-120'>
+                    <Heart size={22} title="Wishlist"/>
                     {wishlistCount > 0 && (
                         <span className='absolute -top-1 -right-1 text-xs bg-[#B95723] text-white rounded-full w-5 h-5 flex items-center justify-center'>
                             {wishlistCount}
@@ -67,8 +67,8 @@ function Navbar({ showMenu, onToggleMenu, cartCount, wishlistCount }) {
                     )}
                 </Link>
                 
-                <Link to="/cart" className='relative text-black hover:text-gray-800 transition-colors p-2'>
-                    <ShoppingCart size={24} title="Cart" />
+                <Link to="/cart" className='relative text-black hover:text-orange-600 transition-colors px-2 hover:scale-120'>
+                    <ShoppingCart size={22} title="Cart" />
                     {cartCount > 0 && (
                         <span className='absolute -top-1 -right-1 text-xs bg-[#B95723] text-white rounded-full w-5 h-5 flex items-center justify-center'>
                             {cartCount}

@@ -36,7 +36,7 @@ function Cart({ cart, onRemoveFromCart, onUpdateQuantity }) {
           </div>
         ) : (
           <div className="grid lg:grid-cols-3 gap-8">
-            {/* Cart Items */}
+            {/* Cart */}
             <div className="lg:col-span-2">
               <div className="bg-gray-50 rounded-lg p-6">
                 {cart.map((item) => (
@@ -46,7 +46,7 @@ function Cart({ cart, onRemoveFromCart, onUpdateQuantity }) {
                     <div className="flex-1">
                       <h3 className="font-semibold text-gray-800">{item.name}</h3>
                       <p className="text-sm text-gray-600">by {item.owner}</p>
-                      <p className="text-[#B95723] font-bold">${item.price}</p>
+                      <p className="text-[#B95723] font-bold">Rs.{item.price}</p>
                     </div>
 
                     <div className="flex items-center gap-2">
@@ -77,14 +77,14 @@ function Cart({ cart, onRemoveFromCart, onUpdateQuantity }) {
               </div>
             </div>
 
-            {/* Order Summary */}
+            {/* Order details */}
             <div className="bg-gray-50 rounded-lg p-6 h-fit sticky top-6">
               <h3 className="text-xl font-bold mb-4 text-gray-800">Order Summary</h3>
               
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between text-gray-600">
                   <span>Items ({itemCount})</span>
-                  <span>${total.toFixed(2)}</span>
+                  <span>Rs.{total.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-gray-600">
                   <span>Shipping</span>
@@ -92,12 +92,12 @@ function Cart({ cart, onRemoveFromCart, onUpdateQuantity }) {
                 </div>
                 <div className="flex justify-between text-gray-600">
                   <span>Tax</span>
-                  <span>${(total * 0.1).toFixed(2)}</span>
+                  <span>Rs.{(total * 0.1).toFixed(2)}</span>
                 </div>
                 <div className="border-t pt-3 mt-3">
                   <div className="flex justify-between text-lg font-bold text-gray-800">
                     <span>Total</span>
-                    <span>${(total * 1.1).toFixed(2)}</span>
+                    <span>Rs.{(total * 1.1).toFixed(2)}</span>
                   </div>
                 </div>
               </div>
