@@ -11,7 +11,7 @@ function Footer() {
           {/* Company details */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <img src='/assets/nav-logo.png' className='w-10 h-10 object-contain' alt='Comix Logo' />
+              <img src='/public/assets/nav-logo.png' className='w-10 h-10 object-contain' alt='Comix Logo' />
               <span className='font-mono font-bold text-2xl'>Comix</span>
             </Link>
             <p className="text-gray-200 mb-4 leading-relaxed">
