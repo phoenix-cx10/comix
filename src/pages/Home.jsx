@@ -9,7 +9,7 @@ function Home({ onAddToCart, onAddToWishlist }) {
   <div>
    <section
       className="relative w-full h-[100vh] bg-cover bg-center flex items-center justify-center"
-      style={{ backgroundImage: "url('/assets/images/home-bg.jpg')" }}
+      style={{ backgroundImage: "url('/images/home-bg.jpg')" }}
     >
 
       {/* main content */}
