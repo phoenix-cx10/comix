@@ -1,14 +1,14 @@
 # 📚 Comix Bookstore
 
-    Warning: Reading books may cause sudden bursts of imagination, uncontrollable page-turning, and severe addiction to good stories. Proceed with caution!
+Warning: Reading books may cause sudden bursts of imagination, uncontrollable page-turning, and severe addiction to good stories. Proceed with caution!
 
 ## Features:
 
-    🛒 Add books to cart 
+- ### 🛒 Add books to cart 
 
-    ❤️ Wishlist functionality
+- ### ❤️ Wishlist functionality
 
-    🔍 Smart filtering 
+- ### 🔍 Smart filtering 
 
 
 ## Installation:
