@@ -11,22 +11,22 @@ Features:
     🔍 Smart filtering 
 
 
-Installation:
+# Installation:
 
-# Clone this masterpiece
+- Clone this masterpiece
 git clone https://github.com/your-username/comix-bookstore.git
 
-# Navigate to the folder
+- Navigate to the folder
 cd comix-bookstore
 
-# Install dependencies 
+- Install dependencies 
 npm install
 
-# Start the development server
+- Start the development server
 npm run dev
 
 
-🎨 Tech Stack 
+# 🎨 Tech Stack 
 
 -React	Because 
 -React Router	
