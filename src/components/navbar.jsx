@@ -60,11 +60,11 @@ function Navbar({ showMenu, cartCount, wishlistCount }) {
                 
                 <Link to="/wishlist" className='relative text-black hover:text-orange-600 transition-colors px-2 hover:scale-120'>
                     <Heart size={22} title="Wishlist"/>
-                    {wishlistCount > 0 && (
+                   {/*{wishlistCount > 0 && (
                         <span className='absolute -top-1 -right-1 text-xs bg-[#B95723] text-white rounded-full w-5 h-5 flex items-center justify-center'>
                             {wishlistCount}
                         </span>
-                    )}
+                    )}*/}
                 </Link>
                 
                 <Link to="/cart" className='relative text-black hover:text-orange-600 transition-colors px-2 hover:scale-120'>
