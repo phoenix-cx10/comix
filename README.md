@@ -14,47 +14,48 @@ Features:
 # Installation:
 
 - Clone this masterpiece
- " git clone https://github.com/your-username/comix-bookstore.git "
+         git clone https://github.com/your-username/comix-bookstore.git
 
 - Navigate to the folder
- " cd comix-bookstore "
+         cd comix-bookstore 
 
 - Install dependencies 
- " npm install "
+         npm install 
 
 - Start the development server
- " npm run dev "
+         npm run dev 
 
 
 # 🎨 Tech Stack 
 
-- React -
-- React Router -
-- Tailwind CSS - 
-- Lucide React .
+- React 
+- React Router 
+- Tailwind CSS  
+- Lucide React 
 
 🛒 Shopping Cart
 
-    Add/remove books 
+-Add/remove books 
 
-    Quantity controls 
+-Quantity controls 
 
-    Total calculation 
+-Total calculation 
 
 ❤️ Wishlist
 
-    Save books for later
+-Save books for later
 
-    Easy removal 
+-Easy removal 
 
-    Cross-device persistence 
-
+-Cross-device persistence 
+    
+    
 🔍 Product Filtering
 
-    Filter by genre 
+-Filter by genre 
 
-    Search functionality
+-Search functionality
 
-    "Load More" buttons
+-"Load More" buttons
 
 
