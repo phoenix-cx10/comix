@@ -1,16 +1,56 @@
-# React + Vite
+# 📚 Comix Bookstore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Warning: Reading books may cause sudden bursts of imagination, uncontrollable page-turning, and severe addiction to good stories. Proceed with caution!
 
-Currently, two official plugins are available:
+## Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ### 🛒 Add books to cart 
 
-## React Compiler
+- ### ❤️ Wishlist functionality
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ### 🔍 Smart filtering 
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation:
+
+- Clone this: ` git clone https://github.com/your-username/comix-bookstore.git `
+
+- Navigate to the folder ` cd comix-bookstore `
+        
+- Install dependencies ` npm install `
+        
+- Start the development server ` npm run dev `
+         
+
+
+## 🎨 Tech Stack 
+
+- React 
+- React Router 
+- Tailwind CSS  
+- Lucide React 
+
+## 🛒 Shopping Cart
+
+- Add/remove books 
+
+- Quantity controls 
+
+- Total calculation 
+
+## ❤️ Wishlist
+
+- Save books for later
+
+- Easy removal 
+    
+    
+## 🔍 Product Filtering
+
+- Filter by genre 
+
+- Search functionality
+
+- "Load More" buttons
+
+
