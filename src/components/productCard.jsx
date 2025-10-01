@@ -41,7 +41,7 @@ function ProductCard({ product, onAddToWishlist, onAddToCart }) {
 
       {/* Image*/}
       <Link to={`/product/${product.id}`} className="block">
-        <div className="bg-gray-50 h-48 w-full rounded-lg mb-4 flex items-center justify-center p-2 border border-[#EBD9D1] group-hover:scale-105 transition-transform duration-300">
+        <div className="bg-gray-400 h-48 w-full rounded-lg mb-4 flex items-center justify-center p-2 border border-[#EBD9D1] group-hover:scale-105 transition-transform duration-300">
           <img
             src={product.image}
             alt={product.name}

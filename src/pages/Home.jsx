@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import FeaturedProducts from "./featuredProducts";
 import Products from "./products";
 import Contact from "../components/contact";
@@ -18,10 +19,11 @@ function Home({ onAddToCart, onAddToWishlist }) {
         <h2 className="text-3xl font-mono mb-4">Your Online Bookstore</h2>
         <p className="mb-8 text-lg font-mono leading-relaxed">
           Discover your next favorite book in our carefully curated collection. From timeless classics to contemporary bestsellers, find stories that inspire.
-        </p>
+          </p>
+        <Link to="/products" >
         <button className="  bg-gradient-to-r from-[#ff5f6d] to-[#ff8e53] text-white font-mono font-semibold px-8 py-3 rounded-full transition duration-300 shadow-lg hover:scale-110 hover:shadow-[0_0_30px_6px_rgba(255,95,109,0.8)]">
           Explore Collection
-        </button>
+        </button></Link>
     </div>
     
       </section>

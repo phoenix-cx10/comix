@@ -191,7 +191,7 @@
     "genre": "Fantasy",
     "featured": false,
     "isHotSale": false,
-    "isBestSeller": false,
+    "isBestSeller": true,
     "image": "/images/Circe.webp"
   },
   {
