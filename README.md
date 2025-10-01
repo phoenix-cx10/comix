@@ -43,8 +43,6 @@ Warning: Reading books may cause sudden bursts of imagination, uncontrollable pa
 - Save books for later
 
 - Easy removal 
-
-- Cross-device persistence 
     
     
 ## 🔍 Product Filtering
