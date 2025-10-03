@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {Toaster }from "react-hot-toast";
+import toast from "react-hot-toast";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import CategoryMenu from './components/categoryMenu';
@@ -21,17 +23,15 @@ function App() {
   const handleAddToCart = (product) => {
     setCart(prevCart => {
       const existingItem = prevCart.find(item => item.id === product.id);
+      
       if (existingItem) {
-        return prevCart.map(item =>
-          item.id === product.id 
-            ? { ...item, quantity: (item.quantity || 1) + 1 }
-            : item
-        );
+        // Remove from cart
+        return prevCart.filter(item => item.id !== product.id);
       } else {
+        // Add to cart
         return [...prevCart, { ...product, quantity: 1 }];
       }
     });
-    console.log("Added to cart:", product.name);
   };
 
   // Update cart quantity
@@ -44,8 +44,9 @@ function App() {
   };
 
   // Remove from cart
-  const handleRemoveFromCart = (productId) => {
+  const handleRemoveFromCart = (productId, product) => {
     setCart(prevCart => prevCart.filter(item => item.id !== productId));
+    toast.error(`Item Removed from cart!`);
   };
 
   // Toggle wishlist function
@@ -63,10 +64,21 @@ function App() {
   // Remove from wishlist
   const handleRemoveFromWishlist = (product) => {
     setWishlist(prevWishlist => prevWishlist.filter(item => item.id !== product.id));
+    toast.error(`${product.name} Removed from wishlist!`);
   };
 
   return (
     <BrowserRouter>
+     <Toaster 
+        position="top-right"
+        toastOptions={{
+          duration: 1200,
+          style: {
+            background: '#363636',
+            color: '#fff',
+          },
+        }}
+      />
       <Navbar
         showMenu={showMenu}
         onToggleMenu={() => setShowMenu(v => !v)}

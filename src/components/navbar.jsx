@@ -19,7 +19,7 @@ function Navbar({ showMenu, cartCount, wishlistCount }) {
                 {/* Shop */}
                 <div className='relative'>
                     <Link to="/products">
-                        <button className='text-lg text-black hover:text-orange-600 font-archivo flex items-center gap-2 mt-1.5 rounded-lg'>
+                        <button className='text-lg text-black cursor-pointer hover:text-orange-600 font-archivo flex items-center gap-2 mt-1.5 rounded-lg'>
                             Shop
                             {/* <ChevronDown size={18} className={`transition-transform duration-200 ${showMenu ? "rotate-180" : "rotate-0"}`} /> */}
                         </button>

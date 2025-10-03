@@ -15,13 +15,13 @@ function Home({ onAddToCart, onAddToWishlist }) {
 
       {/* main content */}
       <div className="relative z-10 max-w-xl text-center text-black pt-2 mb-20">
-        <h1 className="text-6xl font-bold font-archivo mb-4">Welcome to Comix</h1>
-        <h2 className="text-3xl font-mono mb-4">Your Online Bookstore</h2>
-        <p className="mb-8 text-lg font-mono leading-relaxed">
+        <h1 className="text-6xl font-bold font-archivo mb-4 cursor-default">Welcome to Comix</h1>
+        <h2 className="text-3xl font-mono mb-4 cursor-default">Your Online Bookstore</h2>
+        <p className="mb-8 text-lg font-mono leading-relaxed cursor-default">
           Discover your next favorite book in our carefully curated collection. From timeless classics to contemporary bestsellers, find stories that inspire.
           </p>
         <Link to="/products" >
-        <button className="  bg-gradient-to-r from-[#ff5f6d] to-[#ff8e53] text-white font-mono font-semibold px-8 py-3 rounded-full transition duration-300 shadow-lg hover:scale-110 hover:shadow-[0_0_30px_6px_rgba(255,95,109,0.8)]">
+        <button className="cursor-pointer bg-gradient-to-r from-[#ff5f6d] to-[#ff8e53] text-white font-mono font-semibold px-8 py-3 rounded-full transition duration-300 shadow-lg hover:scale-110 hover:shadow-[0_0_30px_6px_rgba(255,95,109,0.8)]">
           Explore Collection
         </button></Link>
     </div>

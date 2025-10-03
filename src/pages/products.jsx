@@ -17,10 +17,10 @@ function Products({ onAddToCart, onAddToWishlist, isHomePage = false }) {
   return (
     <section className="p-6 bg-[#ebb9a0]">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold font-archivo text-center mb-2 text-gray-800">
+        <h2 className="text-3xl font-bold font-archivo text-center mb-2 text-gray-800 cursor-default">
           {isHomePage ? "Browse Products" : "All Products"}
         </h2>
-        <p className="text-gray-600 text-center font-mono mb-8">
+        <p className="text-gray-600 text-center font-mono mb-8 cursor-default">
           {isHomePage ? "Explore our collection" : "Browse our complete collection"}
         </p>
 

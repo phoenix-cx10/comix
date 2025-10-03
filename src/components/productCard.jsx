@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function ProductCard({ product, onAddToWishlist, onAddToCart }) {
   const handleCartClick = (e) => {
@@ -9,6 +10,12 @@ function ProductCard({ product, onAddToWishlist, onAddToCart }) {
     const button = e.currentTarget;
    const isPressed = button.getAttribute('aria-pressed') === 'true';
    button.setAttribute('aria-pressed', (!isPressed).toString());
+   
+   if (isPressed) {
+    toast.error(`${product.name} removed from cart!`);
+   } else {
+    toast.success(`${product.name} added to cart!`);
+   }
   };
 
   const handleWishlistClick = (e) => {
@@ -18,7 +25,15 @@ function ProductCard({ product, onAddToWishlist, onAddToCart }) {
     const button = e.currentTarget;
    const isPressed = button.getAttribute('aria-pressed') === 'true';
    button.setAttribute('aria-pressed', (!isPressed).toString());
+   
+   if (isPressed) {
+    toast.error(`${product.name} removed from wishlist!`);
+   } else {
+    toast.success(`${product.name} added to wishlist!`);
+   }
   };
+
+  
 
   
   
@@ -26,7 +41,7 @@ function ProductCard({ product, onAddToWishlist, onAddToCart }) {
   return (
     <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-[#C9D5D3] p-4 group">
       {/* Labels */}
-      <div className="flex gap-2 mb-3">
+      <div className="flex gap-2 mb-3 cursor-default">
         {product.isHotSale && (
           <span className="bg-[#B95723] text-white font-archivo px-3 py-1 text-xs rounded-full font-medium animate-pulse shadow-lg shadow-[#B95723]/50">
             Hot Sale
@@ -66,11 +81,11 @@ function ProductCard({ product, onAddToWishlist, onAddToCart }) {
       {/* Price & Ratings*/}
       <div className="flex items-center justify-between">
         <div>
-          <p className="font-bold text-[#B95723] text-lg font-archivo">Rs.{product.price}</p>
+          <p className="font-bold text-[#B95723] text-lg cursor-default font-archivo">Rs.{product.price}</p>
           <div className="flex items-center mt-1">
             <span className="text-xs text-gray-600 mr-1">({product.rating})</span>
             {Array.from({ length: 5 }).map((_, i) => (
-              <span key={i} className="text-sm">
+              <span key={i} className="text-sm cursor-default">
                 {i < product.rating ? "⭐" : "☆"}
               </span>
             ))}
@@ -81,7 +96,7 @@ function ProductCard({ product, onAddToWishlist, onAddToCart }) {
         <div className="flex gap-2">
           <button
             onClick={handleCartClick}
-            className="bg-[#85bb76] hover:bg-[#89ee70] text-white p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-md aria-pressed:bg-[#66d849] aria-pressed:text-[#dfe6de]"
+            className="bg-[#85bb76] hover:bg-[#89ee70] cursor-pointer text-white p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-md aria-pressed:bg-[#66d849] aria-pressed:text-[#dfe6de]"
             title="Add to Cart"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +106,7 @@ function ProductCard({ product, onAddToWishlist, onAddToCart }) {
           
         <button
             onClick={handleWishlistClick}
-            className="bg-[#EBD9D1] hover:bg-[#ffad89] text-[#B95723] p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-md aria-pressed:bg-[#B95723] aria-pressed:text-[#EBD9D1]"
+            className="bg-[#EBD9D1] hover:bg-[#ffad89] cursor-pointer text-[#B95723] p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-md aria-pressed:bg-[#B95723] aria-pressed:text-[#EBD9D1]"
             title="Add to Wishlist">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />

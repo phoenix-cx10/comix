@@ -11,11 +11,11 @@ function FeaturedProducts({ onAddToCart, onAddToWishlist }) {
     return (
        <div className="min-h-screen bg-gradient-to-b from-[#FFFFFF] to-[#ebb9a0] py-8 mt-10">
          <section className="container mx-auto px-4">
-           <h2 className="text-3xl font-bold text-center text-black font-archivo mb-2">Featured Products</h2>
-           <p className="text-gray-900 font-mono text-center mb-14">Discover our most popular books</p>
+           <h2 className="text-3xl font-bold text-center text-black font-archivo mb-2 cursor-default">Featured Products</h2>
+           <p className="text-gray-900 font-mono text-center mb-14 cursor-default">Discover our most popular books</p>
            
            {featured.length === 0 ? (
-             <div className="text-center text-white text-lg">
+             <div className="text-center text-white text-lg cursor-default">
                No featured products available
              </div>
            ) : (

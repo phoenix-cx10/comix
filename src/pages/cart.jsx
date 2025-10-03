@@ -15,7 +15,7 @@ function Cart({ cart, onRemoveFromCart, onUpdateQuantity }) {
   };
 
   return (
-    <section className="p-6 bg-white min-h-screen">
+    <section className="p-6 bg-[#FFE8DC] min-h-screen">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-3xl font-bold font-archivo text-center mb-2 text-gray-800">Shopping Cart</h2>
         <p className="text-gray-600 font-mono text-center mb-8">
