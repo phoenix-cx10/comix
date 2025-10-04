@@ -10,6 +10,7 @@ import Products from "./pages/products";
 import Wishlist from "./pages/wishlist";
 import Cart from "./pages/cart";
 import ProductDetail from "./pages/ProductDetail";
+import Payment from "./pages/payment";
 import ContactForm from "./components/ContactForm";
 import Contact from "./components/contact";
 import '../src/index.css';
@@ -127,16 +128,13 @@ function App() {
           } 
         />
         <Route 
-  path="/product/:id" 
-  element={
-    <ProductDetail 
-      onAddToCart={handleAddToCart}
-      onAddToWishlist={handleAddToWishlist}
-    />
-  } 
+          path="/product/:id" 
+          element={<ProductDetail onAddToCart={handleAddToCart} onAddToWishlist={handleAddToWishlist} />} 
         />
         
         <Route path="/contact" element={<Contact />} />
+
+        <Route path="/payment" element={<Payment />} />
       </Routes>
 
       <Footer />

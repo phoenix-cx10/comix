@@ -101,10 +101,11 @@ function Cart({ cart, onRemoveFromCart, onUpdateQuantity }) {
                   </div>
                 </div>
               </div>
-
+              <Link to="/payment">
               <button className="w-full bg-[#42625F] text-white font-archivo py-3 rounded-lg hover:bg-[#36524F] transition-colors font-semibold mb-4">
                 Proceed to Checkout
               </button>
+              </Link>
               
               <Link 
                 to="/products" 

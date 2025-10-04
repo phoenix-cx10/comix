@@ -2,6 +2,28 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: o,
+    behavior: "smooth",
+  });
+};
+
+const scrollToPage = () => {
+  window.scrollTo({
+    top: 100,
+    behavior: "smooth",
+  });
+};
+
+const scrollToBottom = () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth",
+  });
+};
+
 function Footer() {
   return (
     <footer className="bg-[#42625F] text-white">
@@ -35,10 +57,10 @@ function Footer() {
           <div>
             <h3 className="font-semibold font-mono text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-300 font-archivo hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/products" className="text-gray-300 font-archivo hover:text-white transition-colors">Shop</Link></li>
-              <li><Link to="/about" className="text-gray-300 font-archivo hover:text-white transition-colors">About</Link></li>
-              <li><Link to="/contact" className="text-gray-300 font-archivo hover:text-white transition-colors">Contact</Link></li>
+              <li><Link to="/" onClick={scrollToTop} className="text-gray-300 font-archivo hover:text-white transition-colors">Home</Link></li>
+              <li><Link to="/products" onClick={scrollToTop} className="text-gray-300 font-archivo hover:text-white transition-colors">Shop</Link></li>
+              <li><Link to="/contact" onClick={scrollToPage} className="text-gray-300 font-archivo hover:text-white transition-colors">About</Link></li>
+              <li><Link to="/contact" onClick={scrollToBottom} className="text-gray-300 font-archivo hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -67,7 +89,7 @@ function Footer() {
             </div>
             <div className="flex items-center gap-2">
               <MapPin size={16} />
-              <span>151 book store, elbaf</span>
+              <span>151 book store, Elbaf</span>
             </div>
           </div>
         </div>

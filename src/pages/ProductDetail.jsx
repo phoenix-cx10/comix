@@ -7,6 +7,13 @@ function ProductDetail({ onAddToCart, onAddToWishlist }) {
   const { id } = useParams();
   const product = products.find((p) => p.id === parseInt(id));
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 100,
+      behavior: "smooth",
+    });
+  };
+
   if (!product) {
     return (
       <div className="min-h-screen bg-[#ebb9a0] flex items-center justify-center">
@@ -151,6 +158,7 @@ function ProductDetail({ onAddToCart, onAddToWishlist }) {
                   <Link 
                     to={`/product/${relatedProduct.id}`}
                     className="text-lg text-[#42625F] font-archivo hover:underline mt-2 inline-block"
+                    onClick={scrollToTop()}
                   >
                     View Details →
                   </Link>
